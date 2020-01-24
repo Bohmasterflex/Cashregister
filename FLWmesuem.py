@@ -23,21 +23,25 @@ def howmany():
 # Going to gather amounts of adults and elderly(seperate prices) and compare that to peopleto ensure numbers add up.
 # put people in paranthesis
 # Unsure how to utilize while loop here
+# Gather inputs before loop: use loop if folks != people
 def amounts(people):
     folks = 0
-    while True:
+    while not folks == people:
+        
         adults = int(input("How many adults are there?: "))
         senior_citizens = int(input("How many senior citizens are there?: "))
         folks = adults + senior_citizens
-        if folks > people:
-            print("Please check your math! the amount of people entered adds up to more than",people)
+        if folks < people:
+            print("Please check your math! the amount of people you entered",folks,"is less than your intial value of",people)
             continue
-        elif folks < people:
-            print("Please check your math!",folks,"is less than",people)
+            
+        elif folks > people:
+            print("Please check your math! the amount of people entered ",folks,"adds up to more than",people)
             continue
+            
         elif folks == people:
             pass
-    # if statement and for loop? to compare adults + senior_citizens to people  
+    # if statement and for loop? to compare adults + senior_citizens to people
 
 """ Will need to figure out how to call this function conditionally: 
  something like if user input is EOD then print all that jazz
