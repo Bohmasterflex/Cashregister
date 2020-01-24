@@ -27,16 +27,19 @@ def howmany():
 def amounts(people):
     folks = 0
     while not folks == people:
-        
-        adults = int(input("How many adults are there?: "))
-        senior_citizens = int(input("How many senior citizens are there?: "))
+        try:
+            adults = int(input("How many adults are there?: "))
+            senior_citizens = int(input("How many senior citizens are there?: "))
+        except:
+            print("please enter in whole numbers only!")
+            continue
         folks = adults + senior_citizens
         if folks < people:
             print("Please check your math! the amount of people you entered",folks,"is less than your intial value of",people)
             continue
             
         elif folks > people:
-            print("Please check your math! the amount of people entered ",folks,"adds up to more than",people)
+            print("Please check your math! the amount of people entered:",folks,"is more than",people)
             continue
             
         elif folks == people:
